@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Data.Entidades.Categoria>
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h3>Categorias para Productos</h3><br /><br />
+@Html.ActionLink("Nueva Categoria", "Crear", null, new { @class = "btn btn-success" })
+<table class="table table-striped">
+    
+    <tr>
+        <th>Id</th>
+        <th>Descripcion</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Descripcion</td>
+            <td>@Html.ActionLink("Modificar", "Modificar", new { @id = item.Id }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Eliminar", "Index", null, new { @class = "btn btn-danger" })</td>
+        </tr>
+    }
+</table>

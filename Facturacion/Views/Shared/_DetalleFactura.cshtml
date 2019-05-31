@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Data.Entidades.Detalle>
+<table>
+    <tr>
+        <th>Cantidad</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Total</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Cantidad</td>
+        <td>@item.Producto.Id</td>
+        <td>@item.Precio</td>
+        <td>@item.Cantidad * @item.Precio</td>
+    </tr>
+
+    }
+</table>
+

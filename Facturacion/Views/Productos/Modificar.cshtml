@@ -1,0 +1,64 @@
+﻿@model Data.Entidades.Producto
+
+@{
+    ViewBag.Title = "Modificar";
+}
+
+<h2>Modificar Categoria</h2>
+
+@using (Html.BeginForm())
+{
+<div>
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(p => p.Id)
+            
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(p => p.Id , new { htmlAttributes = new { @class = "form-control",@style="width:20%" , @readonly = "readonly" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(p => p.Descripcion)          
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(p => p.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(p => p.CategoriaId)        
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("CategoriaId", ViewBag.Categoria as SelectList, new { @class = "form-control" })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(p => p.Cantidad)           
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(p => p.Cantidad, new { htmlAttributes = new { @class = "form-control", @style = "width:20%" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(p => p.PorcentajeGanancia)           
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(p => p.PorcentajeGanancia, new { htmlAttributes = new { @class = "form-control", @style = "width:20%" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(p => p.Disponible)           
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(p => p.Disponible, new { htmlAttributes = new { @class = "checkbox-inline" } })
+        </div>
+    </div>
+</div><br />
+    <input type="submit" name="name" value="Modificar" class="btn btn-success" />
+}<br />
+@Html.ActionLink("Regresar sin guardar","Index")

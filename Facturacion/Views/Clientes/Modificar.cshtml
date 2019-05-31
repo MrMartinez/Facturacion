@@ -1,0 +1,84 @@
+﻿@model Data.Entidades.Cliente
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Modificar</h2>
+
+@using (Html.BeginForm())
+{
+<div class="form-inline">
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(c => c.Id)           
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(c => c.Id, null, new { htmlAttributes = new { @class = "form-control", @readonly="true" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(c => c.Nombre)           
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(c => c.Nombre, null, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div><br />
+
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(c => c.TipoDocumento)          
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("TipoDocumento", (SelectList)ViewBag.TipoDocumento, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2 " style="text-align:right">
+            @Html.LabelFor(c => c.Documento)           
+        </div>
+        <div class="col-md-4"   >
+            @Html.EditorFor(c => c.Documento, null, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(c => c.Direccion)
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(c => c.Direccion, null, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(c => c.Email)            
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(c => c.Email, null, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div><br />
+
+    <div class="row">
+        <div class="col-md-2" style="text-align:right">
+            @Html.LabelFor(c => c.Telefono1)          
+        </div>
+        <div class="col-md-4">
+            @Html.EditorFor(c => c.Telefono1, null, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div><br />
+         
+          <div class="row">
+              <div class="col-md-2" style="text-align:right">
+                  @Html.LabelFor(c => c.Disponible)                  
+              </div>
+              <div class="col-md-4">@Html.EditorFor(c => c.Disponible)</div>
+          </div>
+    <br />
+
+
+    <input type="submit" name="name" value="Modificar" class="btn btn-success"/>
+</div>
+
+}
+<br />
+@Html.ActionLink("Regresar sin guardar","Index")

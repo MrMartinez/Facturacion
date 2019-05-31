@@ -1,0 +1,1 @@
+﻿jQuery('#menu').metisMenu().show();

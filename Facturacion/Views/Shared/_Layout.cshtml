@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- MetisMenu CSS -->
+    <link href="~/Content/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/sb-admin-2.css" rel="stylesheet" />
+    <!-- Morris Charts CSS -->
+    <link href="~/Content/morrisjs/morris.css" rel="stylesheet" />
+    <link href="~/Content/CSS/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/sb-admin-2.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header" style="float:right">
+                     @Html.Partial("_LoginPartial")
+                </div>
+                
+            </div>
+        </div>
+
+    <div class="row">
+   
+        <div class="col-md-2" style="float:left; margin-top:5%">
+    
+            <nav class="nav navbar navbar-left">
+                <ul class="nav">
+                    <li>
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/Home/Index">
+                            <i class="fa fa-home fa-fw fa-3x"></i> INICIO
+                        </a>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+
+                    <li>
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/Clientes/Index">
+                            <i class="fa fa-user fa-fw fa-3x"></i> CLIENTES
+                        </a>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+                    <li>
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/Categorias/Index">
+                            <i class="fa fa-wrench fa-fw fa-3x"></i> CATEGORIAS
+                        </a>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+                    <li>
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/Facturas/NuevaFactura">
+                            <i class="fa fa-cart-plus fa-fw fa-3x"></i> FACTURAS
+                        </a>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+
+                    <li>
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/Productos/Index">
+                            <i class="fa fa-pencil-square-o fa-fw fa-3x"></i> PRODUCTOS
+                        </a>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+
+                    <li>
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/Productos/Index">
+                            <i class="glyphicon glyphicon-log-out fa-fw fa-3x"></i> SALIR
+                        </a>
+                        <!-- /.dropdown-tasks -->
+                    </li>
+                </ul>
+
+           
+            </nav>
+
+
+        </div>
+        <div>
+            <div class="col-md-10 body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Por Welinton Martinez MVC-Course</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/metisMenu/metisMenu.js"></script>
+    <script src="~/Content/metisMenu/metisMenu.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

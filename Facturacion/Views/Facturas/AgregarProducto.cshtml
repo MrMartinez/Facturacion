@@ -1,0 +1,36 @@
+﻿@model Facturacion.Models.ProductoFactura
+@{
+    ViewBag.Title = "AgregarProducto";
+}
+
+<h2>Agregar Producto</h2>
+<br /><br />
+@using (Html.BeginForm())
+{
+<div>
+    <div class="row">
+       
+        <div class="col-md-4">
+            <div>@Html.Label("Producto")</div>
+            @Html.DropDownList("Id", (SelectList)ViewBag.ProductoId, new { @class = "form-control" })
+        </div>
+    </div><br>
+    
+    <div class="row">
+        <div class="col-md-2">
+            <div>@Html.LabelFor(model => model.Cantidad)</div>
+            <div id="Cantidad">@Html.EditorFor(model => model.Cantidad, new { htmlAttributes = new { @class = "form-control" } } )</div>
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col-md-2">
+            <div>@Html.LabelFor(model => model.Precio)</div>
+            <div id="Precio">@Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })</div>
+        </div>
+    </div>
+  <br />
+</div>
+    <input type="submit" name="AgregarProducto" id="Agregar" value="Agregar" />
+    
+}<br />
+@Html.ActionLink("Regresar sin Agregar","NuevaFactura")

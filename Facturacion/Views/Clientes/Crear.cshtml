@@ -1,0 +1,64 @@
+﻿@model Data.Entidades.Cliente
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Crear</h2>
+
+@using (Html.BeginForm())
+{
+<div>
+    <div>
+        @Html.LabelFor(c => c.Nombre)
+        @Html.EditorFor(c => c.Nombre, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.TipoDocumento)
+        @Html.DropDownList("TipoDocumento",(SelectList)ViewBag.TipoDocumento, htmlAttributes: new {@class="form-control" })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.Documento)
+        @Html.EditorFor(c => c.Documento, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.Direccion)
+        @Html.EditorFor(c => c.Direccion, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.Email)
+        @Html.EditorFor(c => c.Email, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.Telefono1)
+        @Html.EditorFor(c => c.Telefono1, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.Telefono2)
+        @Html.EditorFor(c => c.Telefono2, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(c => c.Telefono3)
+        @Html.EditorFor(c => c.Telefono3, null, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    @*<div>
+        @Html.LabelFor(c => c.FechaCreacion)
+        @Html.EditorFor(c => c.FechaCreacion)
+    </div>*@
+
+    <div>
+        @Html.LabelFor(c => c.Disponible)
+        @Html.EditorFor(c => c.Disponible)
+    </div>
+</div>
+
+<input type="submit" name="name" value="Crear" />
+}
+@Html.ActionLink("Regregar sin guardar","Index",null,new {@class="btn" })

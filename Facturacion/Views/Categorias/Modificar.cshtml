@@ -1,0 +1,31 @@
+﻿@model Data.Entidades.Categoria
+@{
+    ViewBag.Title = "Modificar";
+}
+
+<h2>Modificar Categoria</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div>
+        <div class="row">
+            <div class="col-md-2" style="text-align:right">
+                @Html.LabelFor(c => c.Id)                
+            </div>
+            <div class="col-md-4">
+                @Html.EditorFor(c => c.Id, null, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-2" style="text-align:right">
+                @Html.LabelFor(c => c.Descripcion)               
+            </div>
+            <div class="col-md-4">
+                @Html.EditorFor(c => c.Descripcion, null, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div><br />
+    <input type="submit" name="name" value="Modificar" class="btn btn-success" />
+}
+<br />
+@Html.ActionLink("Regresar sin guardar","Index")

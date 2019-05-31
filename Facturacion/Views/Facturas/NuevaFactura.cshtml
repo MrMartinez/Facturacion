@@ -1,0 +1,47 @@
+﻿@model Facturacion.ViewModels.FacturaView
+@{
+    ViewBag.Title = "NuevaFactura";
+}
+<div style="color:red">  @ViewBag.Error </div>
+<h3>@ViewBag.Mensaje</h3>
+<h2>Nueva Factura</h2>
+@ViewBag.Error
+@using (Html.BeginForm("NuevaFactura", "Facturas", FormMethod.Post))
+{
+<div class="form-horizontal">
+    <br />
+    <div class="row">
+        <div class="col-md-2" style="font-style:normal; font-size:larger"> @Html.Label("Nombre del Cliente")</div>
+        <div class="col-md-4">
+            @Html.DropDownList("Id", (SelectList)ViewBag.Cliente, new { @class = "form-control" })
+        </div>
+    </div><br />
+    @Html.ActionLink("Agregar Producto", "AgregarProducto", new { }, new { @class = "btn btn-primary" })
+
+</div>
+    <br />
+        <input type="submit" name="CrearFactura" id="Nueva" value="Guardar Factura" class="btn btn-success" />
+
+}
+
+<h3>Detalle de la Factura</h3>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.ProductoFactura.Descripcion)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductoFactura.Cantidad)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductoFactura.Precio)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductoFactura.Valor)</th>
+    </tr>
+
+    @for (int i = 0; i < Model.Productos.Count; i++)
+    {
+    <tr>
+        <td>@Html.DisplayFor(model => Model.Productos[i].Descripcion)</td>
+        <td>@Html.DisplayFor(model => Model.Productos[i].Cantidad)</td>
+        <td>@Html.DisplayFor(model => Model.Productos[i].Precio)</td>
+        <td>@Html.DisplayFor((model => Model.Productos[i].Valor))</td>
+        <td>@Html.ActionLink("Modificar", "Modificar", new { id = Model.Productos[i].Id }) |</td>
+        <td>@Html.ActionLink("Quitar", "Eliminar", new { id = Model.Productos[i].Id })</td>
+    </tr>
+    }
+</table>
